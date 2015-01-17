@@ -1,7 +1,7 @@
 # Things you should be able to do.
 
-number_list = [-5, 6, 4, 8, 15, 16, 23, 42, 2, 7]
-num_list = [ 6, 1, 4, 8, 15, 160, 23, 42, 2, 7]
+number_list = [3, 2, 7, 2]
+#num_list = [ 6, 1, 4, 8, 15, 160, 23, 42, 2, 7]
 word_list = [ "What", "about", "the", "Spam", "sausage", "spam", "spam", "bacon", "spam", "tomato", "and", "spam"]
 
 # Write a function that takes a list of numbers and returns a new list with only the odd numbers.
@@ -62,17 +62,36 @@ print word_lengths(word_list)
 
 # Write a function (using iteration) that sums all the numbers in a list.
 def sum_numbers(number_list):
-    return 0
+    sum_num = 0
+    for i in range(0,len(number_list)):
+        sum_num = sum_num + number_list[i]
+    return sum_num
+
+print sum_numbers(number_list)
 
 # Write a function that multiplies all the numbers in a list together.
 def mult_numbers(number_list):
-    return 0
+    product = 1
+    for i in range(len(number_list)):
+        product *= number_list[i]
+    return product
+
+print mult_numbers(number_list)
 
 # Write a function that joins all the strings in a list together (without using the join method) and returns a single string.
 def join_strings(word_list):
-    return ""
+    final_string = ""
+    for word in word_list:
+        final_string += " " + word
+    return final_string
+
+print join_strings(word_list)
 
 # Write a function that takes a list of integers and returns the average (without using the avg method)
 def average(number_list):
-    return 0
+    sum_nums = sum_numbers(number_list)
+    count_nums = len(number_list)
+    return sum_nums/(count_nums*1.0)
+
+print average(number_list)    
 
