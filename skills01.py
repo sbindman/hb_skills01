@@ -1,7 +1,7 @@
 # Things you should be able to do.
 
 number_list = [-5, 6, 4, 8, 15, 16, 23, 42, 2, 7]
-num_list = [ 6, 1, 4, 8, 15, 16, 23, 42, 2, 7]
+num_list = [ 6, 1, 4, 8, 15, 160, 23, 42, 2, 7]
 word_list = [ "What", "about", "the", "Spam", "sausage", "spam", "spam", "bacon", "spam", "tomato", "and", "spam"]
 
 # Write a function that takes a list of numbers and returns a new list with only the odd numbers.
@@ -35,19 +35,30 @@ def smallest(number_list):
     return smallest_so_far
 
 print smallest(number_list)
-print smallest(num_list)
 
 # Write a function that finds the largest element in a list of integers and returns it.
 def largest(number_list):
-    return None
+    greatest_so_far = number_list[0]
+    for number in number_list:
+        if number > greatest_so_far:
+            greatest_so_far = number
+    return greatest_so_far
+
+print largest(number_list)
 
 # Write a function that takes a list of numbers and returns a new list of all those numbers divided by two.
 def halvesies(number_list):
-    return []
+    halved = [(num/2.0) for num in number_list]
+    return halved
+
+print halvesies(number_list)
 
 # Write a function that takes a list of words and returns a list of all the lengths of those words.
 def word_lengths(word_list):
-    return []
+    wl = [len(word) for word in word_list]
+    return wl
+
+print word_lengths(word_list) 
 
 # Write a function (using iteration) that sums all the numbers in a list.
 def sum_numbers(number_list):
